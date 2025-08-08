@@ -2,6 +2,8 @@
 :root {
     --font-main: 'Inter Variable';
     --font-accent: 'PressStart2P';
+    --title-text-wght: 715;
+    --main-text-wght: 415;
 
     --accent-color: #000;
     --bg-color: #fff;
