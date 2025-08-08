@@ -1,1 +1,18 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --font-main: 'Inter Variable';
+    --font-accent: 'PressStart2P';
+
+    --accent-color: #000;
+    --bg-color: #fff;
+    --transparent: transparent;
+    --animation-fill-color: red;
+    --contour-color: #000;
+
+    --color-grad-light: #d3d3d3;
+    --color-grad-lighter: #e7e7e7;
+    --color-grad-dark: #1a1a1a;
+    --inline-size: clamp(23.438rem, 16.285rem + 30.516vw, 43.75rem);
+    --border: 2px solid var(--accent-color);
+    --img-size: clamp(23.188rem, 16.035rem + 30.516vw, 43.5rem);
+}
