@@ -152,6 +152,7 @@
   position: relative;
   color: var(--bg-color);
   cursor: pointer;
+  overflow: hidden;
 }
 
 .button__text {
@@ -165,13 +166,13 @@
   inset: 0;
   position: absolute;
   background-color: var(--accent-color);
-  transform: scale(0);
+  transform: translate(-100%);
   transform-origin: center left;
   transition: transform 0.5s ease-in-out;
 }
 
 .button:hover::after {
-  transform: scale(1);
+  transform: translate(0);
 }
 
 .button:focus {
@@ -294,17 +295,19 @@
 .dialog__window[open] {
   position: fixed;
   inset: 0;
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(6, 1fr);
-  row-gap: 30px;
-  justify-items: center;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
   max-inline-size: 341px;
-  max-block-size: 191px;
   font-family: var(--font-accent), fantasy;
   text-transform: uppercase;
-  padding: 30px 40px;
+  padding: 30px 35px;
+}
+
+.dialog__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .dialog__window[open]::backdrop {
@@ -313,33 +316,20 @@
 }
 
 .dialog__pic {
-  grid-row-start: 1;
-  grid-row-end: auto;
-  grid-column-start: 1;
-  grid-column-end: 2;
+  flex-shrink: 0;
 }
 
 .dialog__command {
-  grid-row-start: 1;
-  grid-row-end: auto;
-  grid-column-start: 2;
-  grid-column-end: 7;
   line-height: 150%;
   font-size: 14px;
-  padding-inline-start: 14px;
 }
 
 .dialog__button {
-  grid-row-start: 2;
-  grid-row-end: auto;
-  grid-column-start: 1;
-  grid-column-end: 7;
   padding: 10px 115px;
   text-transform: uppercase;
-  align-self: flex-end;
 }
 
-@media (width > 375px) and (width <= 1440px) {
+@media (width > 375px) {
 
   .header {
     padding-block: 127px;
@@ -361,7 +351,7 @@
 
   .dialog__window[open] {
     max-inline-size: 353px;
-    padding: 30px 25px;
+    padding: 28px 28px;
   }
 
   .dialog__button {
